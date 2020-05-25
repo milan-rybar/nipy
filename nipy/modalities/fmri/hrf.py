@@ -63,7 +63,10 @@ import scipy.stats as sps
 
 from sympy.utilities.lambdify import implemented_function
 
-from .utils import lambdify_t, T
+try:
+    from .utils import lambdify_t, T
+except:
+    from .utils import lambdify_t, T  # hacky, it works for some reasons :D
 
 def gamma_params(peak_location, peak_fwhm):
     """ Parameters for gamma density given peak and width
